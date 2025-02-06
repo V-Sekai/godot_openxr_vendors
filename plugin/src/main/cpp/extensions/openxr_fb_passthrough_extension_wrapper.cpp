@@ -438,10 +438,10 @@ XrGeometryInstanceFB OpenXRFbPassthroughExtensionWrapper::create_geometry_instan
     vertices.resize(vertex_array.size());
     for (int j = 0; j < vertex_array.size(); j++) {
         Vector3 vertex = vertex_array[j];
-        vertices[j] = { 
-            static_cast<float>(vertex.x), 
-            static_cast<float>(vertex.y), 
-            static_cast<float>(vertex.z) 
+        vertices[j] = {
+            static_cast<float>(vertex.x),
+            static_cast<float>(vertex.y),
+            static_cast<float>(vertex.z)
         };
     }
 
@@ -476,22 +476,22 @@ XrGeometryInstanceFB OpenXRFbPassthroughExtensionWrapper::create_geometry_instan
     Quaternion quat = transform.basis.get_rotation_quaternion();
     Vector3 scale = transform.basis.get_scale();
 
-    XrQuaternionf xr_orientation = { 
-        static_cast<float>(quat.x), 
-        static_cast<float>(quat.y), 
-        static_cast<float>(quat.z), 
-        static_cast<float>(quat.w) 
+    XrQuaternionf xr_orientation = {
+        static_cast<float>(quat.x),
+        static_cast<float>(quat.y),
+        static_cast<float>(quat.z),
+        static_cast<float>(quat.w)
     };
-    XrVector3f xr_position = { 
-        static_cast<float>(transform.origin.x), 
-        static_cast<float>(transform.origin.y), 
-        static_cast<float>(transform.origin.z) 
+    XrVector3f xr_position = {
+        static_cast<float>(transform.origin.x),
+        static_cast<float>(transform.origin.y),
+        static_cast<float>(transform.origin.z)
     };
     XrPosef xr_pose = { xr_orientation, xr_position };
-    XrVector3f xr_scale = { 
-        static_cast<float>(scale.x), 
-        static_cast<float>(scale.y), 
-        static_cast<float>(scale.z) 
+    XrVector3f xr_scale = {
+        static_cast<float>(scale.x),
+        static_cast<float>(scale.y),
+        static_cast<float>(scale.z)
     };
 
     XrGeometryInstanceFB geometry_instance = XR_NULL_HANDLE;
@@ -521,22 +521,22 @@ void OpenXRFbPassthroughExtensionWrapper::set_geometry_instance_transform(XrGeom
     Quaternion quat = transform.basis.get_rotation_quaternion();
     Vector3 scale = transform.basis.get_scale();
 
-    XrQuaternionf xr_orientation = { 
-        static_cast<float>(quat.x), 
-        static_cast<float>(quat.y), 
-        static_cast<float>(quat.z), 
-        static_cast<float>(quat.w) 
+    XrQuaternionf xr_orientation = {
+        static_cast<float>(quat.x),
+        static_cast<float>(quat.y),
+        static_cast<float>(quat.z),
+        static_cast<float>(quat.w)
     };
-    XrVector3f xr_position = { 
-        static_cast<float>(transform.origin.x), 
-        static_cast<float>(transform.origin.y), 
-        static_cast<float>(transform.origin.z) 
+    XrVector3f xr_position = {
+        static_cast<float>(transform.origin.x),
+        static_cast<float>(transform.origin.y),
+        static_cast<float>(transform.origin.z)
     };
     XrPosef xr_pose = { xr_orientation, xr_position };
-    XrVector3f xr_scale = { 
-        static_cast<float>(scale.x), 
-        static_cast<float>(scale.y), 
-        static_cast<float>(scale.z) 
+    XrVector3f xr_scale = {
+        static_cast<float>(scale.x),
+        static_cast<float>(scale.y),
+        static_cast<float>(scale.z)
     };
 
     XrGeometryInstanceTransformFB xr_transform = {
